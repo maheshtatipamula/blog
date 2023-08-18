@@ -42,7 +42,7 @@ const EditBlog = () => {
     // previewFile(file);
     try {
       const res = await axios.post(
-        " https://blog-node-mysql.onrender.com/api/posts/add-photo",
+        " https://blognodemysql-production.up.railway.app/api/posts/add-photo",
         formData
       );
       return res.data;
@@ -65,7 +65,7 @@ const EditBlog = () => {
     try {
       const response = state
         ? await axios.put(
-            ` https://blog-node-mysql.onrender.com/api/posts/edit-blog/${state.postId}`,
+            ` https://blognodemysql-production.up.railway.app/api/posts/edit-blog/${state.postId}`,
             { title, description, img: img, category },
             {
               headers: {
@@ -74,7 +74,7 @@ const EditBlog = () => {
             }
           )
         : await axios.post(
-            " https://blog-node-mysql.onrender.com/api/posts/add-blog",
+            " https://blognodemysql-production.up.railway.app/api/posts/add-blog",
             { title, description, img, category },
             {
               headers: {
@@ -113,7 +113,7 @@ const EditBlog = () => {
   //   console.log("hey");
   //   try {
   //     const response = await axios.post(
-  //       " https://blog-node-mysql.onrender.com/api/user/posttrail",
+  //       " https://blognodemysql-production.up.railway.app/api/user/posttrail",
   //       {
   //         image,
   //       },
@@ -137,7 +137,7 @@ const EditBlog = () => {
         {state?.postImage ? (
           <img
             className="add-blog-img"
-            src={`https://blog-node-mysql.onrender.com/${state?.postImage}`}
+            src={`https://blognodemysql-production.up.railway.app/${state?.postImage}`}
             alt="alt"
           />
         ) : (

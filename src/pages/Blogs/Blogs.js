@@ -15,7 +15,7 @@ export const Blogs = () => {
   const fetchPosts = async () => {
     try {
       const response = await axios.get(
-        " https://blog-node-mysql.onrender.com/api/posts/all-blogs",
+        " https://blognodemysql-production.up.railway.app/api/posts/all-blogs",
         {
           headers: {
             Authorization: `Bearer ${jwt_token}`,
@@ -46,7 +46,7 @@ export const Blogs = () => {
               >
                 <div className="img">
                   <img
-                    src={` https://blog-node-mysql.onrender.com/${post?.img}`}
+                    src={` https://blognodemysql-production.up.railway.app/${post?.img}`}
                     alt="post"
                   />
                 </div>

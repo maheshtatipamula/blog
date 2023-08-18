@@ -31,7 +31,7 @@ const SingleBlog = () => {
   const fetchABlog = async () => {
     try {
       const response = await axios.get(
-        ` https://blog-node-mysql.onrender.com/api/posts/get-blog/${postId}`,
+        ` https://blognodemysql-production.up.railway.app/api/posts/get-blog/${postId}`,
         {
           headers: {
             Authorization: `Bearer ${jwt_token}`,
@@ -46,7 +46,7 @@ const SingleBlog = () => {
   const fetchComments = async () => {
     try {
       const response = await axios.get(
-        ` https://blog-node-mysql.onrender.com/api/comments/all-comments/${postId}`,
+        ` https://blognodemysql-production.up.railway.app/api/comments/all-comments/${postId}`,
         {
           headers: {
             Authorization: `Bearer ${jwt_token}`,
@@ -59,7 +59,7 @@ const SingleBlog = () => {
   const deleteComment = async (id) => {
     try {
       const response = await axios.delete(
-        ` https://blog-node-mysql.onrender.com/api/comments/delete-comment/${id}`,
+        ` https://blognodemysql-production.up.railway.app/api/comments/delete-comment/${id}`,
         {
           headers: {
             Authorization: `Bearer ${jwt_token}`,
@@ -75,7 +75,7 @@ const SingleBlog = () => {
   const deleteBlog = async (id) => {
     try {
       const response = await axios.delete(
-        ` https://blog-node-mysql.onrender.com/api/posts/delete-blog/${id}`,
+        ` https://blognodemysql-production.up.railway.app/api/posts/delete-blog/${id}`,
         {
           headers: {
             Authorization: `Bearer ${jwt_token}`,
@@ -97,7 +97,7 @@ const SingleBlog = () => {
         postId: postId,
       };
       const response = await axios.post(
-        ` https://blog-node-mysql.onrender.com/api/comments/new-comment`,
+        ` https://blognodemysql-production.up.railway.app/api/comments/new-comment`,
         values,
         {
           headers: {
@@ -127,7 +127,7 @@ const SingleBlog = () => {
       <div className="single-post">
         <div className="single-post-content">
           <img
-            src={` https://blog-node-mysql.onrender.com/${blog?.postImage}`}
+            src={` https://blognodemysql-production.up.railway.app/${blog?.postImage}`}
             alt="content"
           />
           <div className="single-post-user">

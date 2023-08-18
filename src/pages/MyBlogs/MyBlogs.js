@@ -3,8 +3,9 @@ import Navbar from "../../components/Navbar/Navbar";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Cookies from "js-cookie";
+
 const MyBlogs = () => {
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState();
   const jwt_token = Cookies.get("jwt_token");
 
   //fetchposts
@@ -12,7 +13,7 @@ const MyBlogs = () => {
   const fetchPosts = async () => {
     try {
       const response = await axios.get(
-        " https://blog-node-mysql.onrender.com/api/posts/my-blogs",
+        " https://blognodemysql-production.up.railway.app/api/posts/my-blogs",
         {
           headers: {
             Authorization: `Bearer ${jwt_token}`,
@@ -35,7 +36,7 @@ const MyBlogs = () => {
               <div className="post" key={post.id}>
                 <div className="img">
                   <img
-                    src={`https://blog-node-mysql.onrender.com/${post?.img}`}
+                    src={`https://blognodemysql-production.up.railway.app/${post?.img}`}
                     alt="post"
                   />
                 </div>

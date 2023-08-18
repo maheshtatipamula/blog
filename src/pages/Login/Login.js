@@ -34,7 +34,7 @@ const Login = () => {
         const { username, password } = values;
         try {
           const response = await axios.post(
-            " https://blog-node-mysql.onrender.com/api/auth/login",
+            " https://blognodemysql-production.up.railway.app/api/auth/login",
             {
               username,
               password,

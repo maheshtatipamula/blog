@@ -35,7 +35,7 @@ const Register = () => {
           };
 
           await axios.post(
-            " https://blog-node-mysql.onrender.com/api/auth/register",
+            " https://blognodemysql-production.up.railway.app/api/auth/register",
             {
               username,
               email,

@@ -37,7 +37,7 @@ const AddBlog = () => {
 
     try {
       const res = await axios.post(
-        " https://blog-node-mysql.onrender.com/api/posts/add-photo",
+        " https://blognodemysql-production.up.railway.app/api/posts/add-photo",
         formData
       );
       console.log(res);
@@ -65,7 +65,7 @@ const AddBlog = () => {
     console.log(img);
     try {
       await axios.post(
-        " https://blog-node-mysql.onrender.com/api/posts/add-blog",
+        " https://blognodemysql-production.up.railway.app/api/posts/add-blog",
         { title, description, img, category },
         {
           headers: {
@@ -181,7 +181,7 @@ export default AddBlog;
 //   console.log("hey");
 //   try {
 //     const response = await axios.post(
-//       " https://blog-node-mysql.onrender.com/api/user/posttrail",
+//       " https://blognodemysql-production.up.railway.app/api/user/posttrail",
 //       {
 //         image,
 //       },
