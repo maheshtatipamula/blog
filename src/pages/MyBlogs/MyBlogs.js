@@ -7,6 +7,8 @@ const MyBlogs = () => {
   const [posts, setPosts] = useState([]);
   const jwt_token = Cookies.get("jwt_token");
 
+  //fetchposts
+
   const fetchPosts = async () => {
     try {
       const response = await axios.get(
