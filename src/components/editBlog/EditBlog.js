@@ -137,7 +137,7 @@ const EditBlog = () => {
         {state?.postImage ? (
           <img
             className="add-blog-img"
-            src={`../../uploads/${state?.postImage}`}
+            src={`https://blog-node-mysql.onrender.com/${state?.postImage}`}
             alt="alt"
           />
         ) : (
