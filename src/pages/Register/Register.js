@@ -23,16 +23,15 @@ const Register = () => {
       validationSchema: signUpSchema,
       onSubmit: async (values) => {
         const { username, email, password } = values;
-        console.log("hi");
 
         try {
-          const config = {
-            headers: {
-              "Access-Control-Allow-Origin": "*",
-              "Access-Control-Allow-Methods":
-                "GET,PUT,POST,DELETE,PATCH,OPTIONS",
-            },
-          };
+          // const config = {
+          //   headers: {
+          //     "Access-Control-Allow-Origin": "*",
+          //     "Access-Control-Allow-Methods":
+          //       "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+          //   },
+          // };
 
           await axios.post(
             " https://blognodemysql-production.up.railway.app/api/auth/register",
@@ -46,8 +45,8 @@ const Register = () => {
           navigate("/login", { replace: true });
         } catch (err) {
           setIsServerErrorMsg(true);
-          setServerErrorMsg(err.response.data.message);
-          console.log(err);
+          setServerErrorMsg(err.response.data);
+
           // toast.error(`${err.response.data.message}`);
         }
       },

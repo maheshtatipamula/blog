@@ -33,14 +33,14 @@ const AddBlog = () => {
   const upload = async () => {
     const formData = new FormData();
     formData.append("file", file);
-    console.log("hello form");
+    // console.log("hello form");
 
     try {
       const res = await axios.post(
         " https://blognodemysql-production.up.railway.app/api/posts/add-photo",
         formData
       );
-      console.log(res);
+      // console.log(res);
 
       return res.data;
     } catch (error) {
@@ -52,7 +52,7 @@ const AddBlog = () => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("hello");
+    // console.log("hello");
     if (title === "") {
       toast.error("title cannot be empty");
     }
@@ -60,9 +60,9 @@ const AddBlog = () => {
       toast.error("description cannot be empty");
     }
     const img = await upload();
-    console.log("2");
+    // console.log("2");
 
-    console.log(img);
+    // console.log(img);
     try {
       await axios.post(
         " https://blognodemysql-production.up.railway.app/api/posts/add-blog",

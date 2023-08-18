@@ -34,7 +34,7 @@ const Login = () => {
         const { username, password } = values;
         try {
           const response = await axios.post(
-            " https://blognodemysql-production.up.railway.app/api/auth/login",
+            "  https://blognodemysql-production.up.railway.app/api/auth/login",
             {
               username,
               password,
@@ -46,7 +46,8 @@ const Login = () => {
           }
         } catch (error) {
           setIsError(true);
-          setErrorMessage(error.response.data.message);
+          setErrorMessage(error.response.data);
+          // console.log(error);
         }
       },
     });

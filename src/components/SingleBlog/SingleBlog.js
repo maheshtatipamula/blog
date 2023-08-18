@@ -107,7 +107,7 @@ const SingleBlog = () => {
       );
       if (response.status === 200) {
         fetchComments();
-        console.log("hello from comments add");
+        // console.log("hello from comments add");
         setInputComment("");
       } else {
       }

@@ -151,3 +151,10 @@ select {
 textarea {
   font-family: initial;
 }
+
+/* @media screen and (max-width: 769px) { */
+.add-blog-content {
+  width: 80%;
+  max-width: 930px;
+}
+/* } */

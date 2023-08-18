@@ -63,26 +63,16 @@ const EditBlog = () => {
       img = await upload();
     }
     try {
-      const response = state
-        ? await axios.put(
-            ` https://blognodemysql-production.up.railway.app/api/posts/edit-blog/${state.postId}`,
-            { title, description, img: img, category },
-            {
-              headers: {
-                Authorization: `Bearer ${jwt_token}`,
-              },
-            }
-          )
-        : await axios.post(
-            " https://blognodemysql-production.up.railway.app/api/posts/add-blog",
-            { title, description, img, category },
-            {
-              headers: {
-                Authorization: `Bearer ${jwt_token}`,
-              },
-            }
-          );
-      console.log(response);
+      await axios.put(
+        ` https://blognodemysql-production.up.railway.app/api/posts/edit-blog/${state.postId}`,
+        { title, description, img: img, category },
+        {
+          headers: {
+            Authorization: `Bearer ${jwt_token}`,
+          },
+        }
+      );
+      // console.log(response);
       navigate("/");
     } catch (error) {
       toast.error(error.response.data.sqlMessage);
@@ -90,7 +80,7 @@ const EditBlog = () => {
   };
   const handleChange = (e) => {
     const handleFile = e.target.files[0];
-    console.log(handleFile);
+    // console.log(handleFile);
     if (state) {
       state.postImage = null;
     }
